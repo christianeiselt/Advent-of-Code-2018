@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Platform check
+        run: uname -a
+
+      - name: Install 🔧
+        run: npm install
+
+      - name: Lint 🧐
+        run: npm run lint
+
+      - name: Build 🏗️
+        run: npm run build
+
+      - name: Test 🚨
+        run: npm test
