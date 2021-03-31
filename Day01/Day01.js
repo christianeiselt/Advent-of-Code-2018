@@ -1,4 +1,4 @@
-var fs = require("fs")
+var fs = require("fs");
 const text = fs.readFileSync('Input/2018/Day01/input.txt','utf8')
 const splitLines = str => str.split(/\r?\n/);
 var changes = splitLines(text);
