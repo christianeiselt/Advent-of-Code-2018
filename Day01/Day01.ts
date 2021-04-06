@@ -4,16 +4,16 @@ const text = fs.readFileSync('Input/Day01_puzzle.txt', 'utf8');
 const splitLines = (str: string) => str.split(/\r?\n/);
 const changes = splitLines(text);
 
-var resultingFrequency: number = 0;
-var frequencies: number[] = [];
-var duplicateFrequency = 0;
-var duplicate = false;
-var sum = 0;
-var loop = 0;
+let resultingFrequency: number = 0;
+let frequencies: number[] = [];
+let duplicateFrequency = 0;
+let duplicate = false;
+let sum = 0;
+let loop = 0;
 
 while (!duplicate) {
-  for (var i = 0; i < changes.length; i++) {
-    let number = parseInt(changes[i]);
+  for (let i = 0; i < changes.length; i++) {
+    const number = parseInt(changes[i]);
 
     if (!isNaN(number)) {
       resultingFrequency += number;
@@ -21,7 +21,7 @@ while (!duplicate) {
       if (!frequencies.hasOwnProperty(resultingFrequency)) {
         frequencies[resultingFrequency] = resultingFrequency;
       } else {
-        if (duplicate == false) {
+        if (duplicate === false) {
           duplicate = true;
           duplicateFrequency = resultingFrequency;
         }
@@ -29,18 +29,19 @@ while (!duplicate) {
     }
   }
 
-  if (sum == 0) {
+  if (sum === 0) {
     sum = resultingFrequency;
   }
   loop++;
 }
 
-console.log('The resulting frequency after 1 loop is: ' + sum);
-if (duplicate == true) {
+console.log('The resulting frequency after 1 loop is: ' + sum + '.');
+if (duplicate === true) {
   console.log(
     'The first frequency was reached twice during the loop ' +
       loop +
       ' and is: ' +
-      duplicateFrequency,
+      duplicateFrequency +
+      '.',
   );
 }
