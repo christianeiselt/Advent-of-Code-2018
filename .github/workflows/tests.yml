@@ -21,7 +21,9 @@ jobs:
         run: uname -a
 
       - name: Install 🔧
-        run: npm install
+        run: |
+          cache-path: ~/project/node_modules
+          npm install
 
       - name: Lint 🧐
         run: npm run lint
