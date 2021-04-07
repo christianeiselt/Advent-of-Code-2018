@@ -9,5 +9,5 @@ const testTSConfig = require('./tests/tsconfig.json');
 tsNode.register({
   files: true,
   transpileOnly: true,
-  project: './tests/tsconfig.json'
+  project: './tests/tsconfig.json',
 });
