@@ -19,13 +19,11 @@ while (!duplicate) {
 
       if (!frequencies.hasOwnProperty(resultingFrequency)) {
         frequencies[resultingFrequency] = resultingFrequency;
+      } else if (duplicate === false) {
+        duplicate = true;
+        duplicateFrequency = resultingFrequency;
       } else {
-        if (duplicate === false) {
-          duplicate = true;
-          duplicateFrequency = resultingFrequency;
-        } else {
-          //
-        }
+        //
       }
     }
   }
