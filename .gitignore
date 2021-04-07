@@ -1,6 +1,7 @@
 .DS_Store
 .project
 .class
+lib
 node_modules
 .vscode/*
 !.vscode/settings.json
@@ -8,5 +9,3 @@ node_modules
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
-.js
-.js.map
