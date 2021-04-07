@@ -14,7 +14,7 @@ while (!duplicate) {
   for (let i = 0; i < input.length; i += 1) {
     const number = input[i];
 
-    if (Number.isNaN(number)) {
+    if (!Number.isNaN(number)) {
       resultingFrequency += number;
 
       if (!frequencies.hasOwnProperty(resultingFrequency)) {
@@ -37,14 +37,10 @@ while (!duplicate) {
 }
 
 // eslint-disable-next-line no-console
-console.log('The resulting frequency after 1 loop is: ' + sum + '.');
+console.log(`The resulting frequency after 1 loop is: ${sum}.`);
 if (duplicate === true) {
   // eslint-disable-next-line no-console
   console.log(
-    'The first frequency was reached twice during the loop ' +
-      loop +
-      ' and is: ' +
-      duplicateFrequency +
-      '.',
+    `The first frequency was reached twice during the loop ${loop} and is: ${duplicateFrequency}.`,
   );
 }
