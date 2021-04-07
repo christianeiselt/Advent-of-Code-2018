@@ -17,7 +17,12 @@ while (!duplicate) {
     if (!Number.isNaN(number)) {
       resultingFrequency += number;
 
-      if (!frequencies.hasOwnProperty(resultingFrequency)) {
+      if (
+        !Object.prototype.hasOwnProperty.call(
+          frequencies,
+          resultingFrequency,
+        )
+      ) {
         frequencies[resultingFrequency] = resultingFrequency;
       } else if (duplicate === false) {
         duplicate = true;
