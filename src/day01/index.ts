@@ -4,7 +4,7 @@ const rawInput: string = readInput('input.txt');
 const input: number[] = rawInput.split('\n').map(Number);
 
 let resultingFrequency: number = 0;
-let frequencies: number[] = [];
+const frequencies: number[] = [];
 let duplicateFrequency = 0;
 let duplicate = false;
 let sum = 0;
@@ -14,7 +14,7 @@ while (!duplicate) {
   for (let i = 0; i < input.length; i += 1) {
     const number = input[i];
 
-    if (!isNaN(number)) {
+    if (Number.isNaN(number)) {
       resultingFrequency += number;
 
       if (!frequencies.hasOwnProperty(resultingFrequency)) {
@@ -23,6 +23,8 @@ while (!duplicate) {
         if (duplicate === false) {
           duplicate = true;
           duplicateFrequency = resultingFrequency;
+        } else {
+          //
         }
       }
     }
@@ -34,8 +36,10 @@ while (!duplicate) {
   loop++;
 }
 
+// eslint-disable-next-line no-console
 console.log('The resulting frequency after 1 loop is: ' + sum + '.');
 if (duplicate === true) {
+  // eslint-disable-next-line no-console
   console.log(
     'The first frequency was reached twice during the loop ' +
       loop +
