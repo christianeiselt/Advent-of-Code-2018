@@ -36,7 +36,7 @@ while (!duplicate) {
   if (sum === 0) {
     sum = resultingFrequency;
   }
-  loop++;
+  loop += 1;
 }
 
 // eslint-disable-next-line no-console
