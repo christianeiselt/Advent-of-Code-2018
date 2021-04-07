@@ -11,7 +11,7 @@ let sum = 0;
 let loop = 0;
 
 while (!duplicate) {
-  for (let i = 0; i < input.length; i++) {
+  for (let i = 0; i < input.length; i += 1) {
     const number = input[i];
 
     if (!isNaN(number)) {
