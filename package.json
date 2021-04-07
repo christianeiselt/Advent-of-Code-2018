@@ -1,8 +1,6 @@
 {
-  "dependencies": {
-    "@types/node": "^14.14.37"
-  },
   "devDependencies": {
+    "@types/node": "^14.14.37",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "eslint": "^7.23.0",
@@ -13,6 +11,6 @@
     "mocha": "^8.3.2"
   },
   "scripts": {
-    "lint": "eslint.js"
+    "lint": "node_modules/eslint/bin/eslint.js"
   }
 }
